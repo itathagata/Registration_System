@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}
+<title>Welcome</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <img src="{% static 'images/background.jpg'%}" class="rounded-lg shadow-lg p-3 mb-5 bg-white rounded" alt="Background" width="360"height="250">
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static 'images/background.jpg'%}" class="rounded-lg shadow-lg p-3 mb-5 bg-white rounded" alt="Background" width="360"height="250">
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static 'images/background.jpg'%}" class="rounded-lg shadow-lg p-3 mb-5 bg-white rounded" alt="Background" width="360"height="250">
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-10 offset-md-1">
+                    <center><p class="h1">Random text1</p></center>
+                    <center><p class="h2">Random Text2</p></center>
+                    <center><p class="h5">Random Text3</p></center>
+                    <center><a href="{% url 'todolist'%}"><button type="button" class="btn btn-primary btn-lg mt-3">Let's Go!</button></a></center>
+                </div>
+            </div>          
+            
+        </div>
+{% endblock content %}

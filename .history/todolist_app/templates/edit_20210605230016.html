@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block title %}
+<title>Edit</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+</br>
+<form method="POST">
+    {%csrf_token%}
+    <div class="form-group">    
+          <input type="text" class="form-control" name="Student_Name" placeholder="{{ task_obj.Student_Name }}" value="{{ task_obj.Student_Name }}">
+    </div>
+    <div class="form-group">    
+        <input type="hidden" name="Attendance"  value="{{ task_obj.Attendence }}">
+        <input type="hidden" name="Score"  value="{{ task_obj.Score }}">
+    </div>
+    </br>
+    <button type="submit" class="btn btn-primary">Update Student</button>
+  </form>
+
+</div>
+{% endblock content %}

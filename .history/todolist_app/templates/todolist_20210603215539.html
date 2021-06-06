@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+{% block title %}
+<title>TodoList Manager</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+</br>
+  {%if messages %}
+    {% for message in messages%}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+  <form method = "POST">
+    {% csrf_token %}
+    <div class = "form-group">
+      <input type="text" class = "form-control " name = "task">
+    </div>
+
+  <button type="submit" class="btn btn-primary">Add Student</button>
+</form>
+</br>
+    <table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Student Name</th>
+      <th scope="col">Attendance</th>
+      <th scope="col">Score</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+    <tbody>
+    {% if all_tasks %}
+      {%for obj in all_tasks%}
+        {% if obj.Attendance %}
+            <tr class="table-success">
+            <td>{{ obj.id }} | {{ obj.Student_Name }}</td>
+            <td>Safe</td>
+            <td>{{ obj.Score }}</td>
+            <td>Edit</td>
+            <td>Delete</td>
+            </tr>
+        {% else %}
+            <tr class="table-danger">
+            <td>{{ obj.id }} | {{ obj.Student_Name }}</td>
+            <td>Unsafe</td>
+            <td>{{ obj.Score }}</td>
+            <td>Edit</td>
+            <td>Delete</td>
+            </tr>
+        {% endif %}
+       {% endfor %}
+    {% endif %}
+     </tbody>
+</table>
+    </div>
+{% endblock content %}
+

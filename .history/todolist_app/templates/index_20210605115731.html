@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}
+<title>Welcome</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="{% static 'images/background.jpg'%}" alt="Background" width="360"height="250">
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static 'images/background.jpg'%}" alt="Background" width="360"height="250">
+            </div>
+            <div class="col-lg-4">
+                <img src="{% static 'images/background.jpg'%}" alt="Background" width="360"height="250">
+            </div>
+        </div>
+{% endblock content %}
